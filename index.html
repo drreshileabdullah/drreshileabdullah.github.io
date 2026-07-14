@@ -37,7 +37,17 @@
     background: linear-gradient(135deg, rgba(13,115,119,0.15), rgba(13,115,119,0.05));
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
   }
-  .hero-content { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-content { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+  .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .hero-photo {
+    width: 220px; height: 220px; border-radius: 50%;
+    object-fit: cover; object-position: top;
+    border: 4px solid var(--teal-light);
+    box-shadow: 0 0 0 8px rgba(13,115,119,0.15), 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .hero-photo-name { font-family: var(--serif); font-size: 15px; color: rgba(255,255,255,0.7); text-align: center; font-style: italic; }
+  .hero-photo-title { font-size: 12px; color: var(--teal-light); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+  @media (max-width: 768px) { .hero-content { grid-template-columns: 1fr; } .hero-photo-wrap { order: -1; } .hero-photo { width: 160px; height: 160px; } }
   .hero-tag {
     display: inline-block; background: rgba(13,115,119,0.2); color: var(--teal-light);
     font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
@@ -167,17 +177,26 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-tag">Content Strategist · Medical Writer · Digital Marketer</div>
-    <h1>Dr. Reshile<br><span>Abdullah</span></h1>
-    <p class="hero-subtitle">Where clinical science meets compelling content</p>
-    <p class="hero-desc">Doctor of Pharmacy turned content strategist with 8+ years of experience driving measurable growth for global healthcare, SaaS, and digital brands. I don't just write — I build strategies that rank, convert, and last.</p>
-    <a href="#results" class="hero-cta">See My Results ↓</a>
-    <div class="hero-stats">
-      <div><div class="stat-num">500+</div><div class="stat-label">Published Articles</div></div>
-      <div><div class="stat-num">76K+</div><div class="stat-label">Sessions Generated</div></div>
-      <div><div class="stat-num">699K</div><div class="stat-label">Google Impressions</div></div>
-      <div><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
+  <div class="hero-content" style="display:grid; grid-template-columns:1fr 240px; gap:60px; align-items:center; max-width:1100px; margin:0 auto; position:relative; z-index:1;">
+    <div>
+      <div class="hero-tag">Content Strategist · Medical Writer · Digital Marketer</div>
+      <h1>Dr. Reshile<br><span>Abdullah</span></h1>
+      <p class="hero-subtitle">Where clinical science meets compelling content</p>
+      <p class="hero-desc">Doctor of Pharmacy turned content strategist with 8+ years of experience driving measurable growth for global healthcare, SaaS, and digital brands. I don't just write — I build strategies that rank, convert, and last.</p>
+      <a href="#results" class="hero-cta">See My Results ↓</a>
+      <div class="hero-stats">
+        <div><div class="stat-num">500+</div><div class="stat-label">Published Articles</div></div>
+        <div><div class="stat-num">76K+</div><div class="stat-label">Sessions Generated</div></div>
+        <div><div class="stat-num">699K</div><div class="stat-label">Google Impressions</div></div>
+        <div><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:14px;">
+      <img src="https://i.ibb.co/W4JNLyFJ/Profile-Pic-for-Gig.png" alt="Dr. Reshile Abdullah"
+        style="width:210px; height:210px; border-radius:50%; object-fit:cover; object-position:top;
+               border:4px solid #14A3A8; box-shadow:0 0 0 8px rgba(13,115,119,0.2), 0 20px 60px rgba(0,0,0,0.5);">
+      <div style="font-family:'Playfair Display',serif; font-size:15px; color:rgba(255,255,255,0.8); text-align:center; font-style:italic;">Dr. Reshile Abdullah</div>
+      <div style="font-size:11px; color:#14A3A8; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; text-align:center;">Pharm.D · Content Strategist</div>
     </div>
   </div>
 </section>
