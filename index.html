@@ -3,41 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reshile Abdullah — Portfolio</title>
+<title>Dr. Reshile Abdullah — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --teal: #0D7377;
-    --teal-light: #14A3A8;
-    --teal-pale: #E8F4F4;
-    --dark: #0F1923;
-    --mid: #2C3E50;
-    --gray: #6B7280;
-    --light: #F7F9F9;
-    --white: #FFFFFF;
-    --gold: #C9973A;
+    --teal: #0D7377; --teal-light: #14A3A8; --teal-pale: #E8F4F4;
+    --dark: #0F1923; --mid: #2C3E50; --gray: #6B7280;
+    --light: #F7F9F9; --white: #FFFFFF;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Inter', system-ui, sans-serif;
   }
-
   html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--dark); line-height: 1.6; }
 
-  body {
-    font-family: var(--sans);
-    background: var(--white);
-    color: var(--dark);
-    line-height: 1.6;
-  }
-
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #E5EAEA;
-    padding: 16px 40px;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid #E5EAEA; padding: 16px 40px;
     display: flex; justify-content: space-between; align-items: center;
   }
   .nav-name { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--teal); }
@@ -45,158 +28,99 @@
   .nav-links a { text-decoration: none; color: var(--mid); font-size: 14px; font-weight: 500; transition: color .2s; }
   .nav-links a:hover { color: var(--teal); }
 
-  /* HERO */
   .hero {
-    min-height: 100vh;
-    background: var(--dark);
-    display: flex; align-items: center;
-    padding: 120px 40px 80px;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh; background: var(--dark);
+    display: flex; align-items: center; padding: 120px 40px 80px; position: relative; overflow: hidden;
   }
   .hero::before {
-    content: '';
-    position: absolute; top: 0; right: 0;
-    width: 50%; height: 100%;
+    content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
     background: linear-gradient(135deg, rgba(13,115,119,0.15), rgba(13,115,119,0.05));
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
   }
   .hero-content { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
   .hero-tag {
-    display: inline-block;
-    background: rgba(13,115,119,0.2);
-    color: var(--teal-light);
+    display: inline-block; background: rgba(13,115,119,0.2); color: var(--teal-light);
     font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 6px 16px; border-radius: 20px; margin-bottom: 24px;
-    border: 1px solid rgba(13,115,119,0.3);
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; border: 1px solid rgba(13,115,119,0.3);
   }
-  .hero h1 {
-    font-family: var(--serif); font-size: clamp(42px, 6vw, 80px); font-weight: 900;
-    color: var(--white); line-height: 1.05; margin-bottom: 8px;
-  }
+  .hero h1 { font-family: var(--serif); font-size: clamp(42px, 6vw, 80px); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 8px; }
   .hero h1 span { color: var(--teal-light); }
-  .hero-subtitle {
-    font-family: var(--serif); font-size: clamp(18px, 2.5vw, 26px);
-    color: rgba(255,255,255,0.6); margin-bottom: 28px; font-weight: 400; font-style: italic;
-  }
-  .hero-desc {
-    font-size: 16px; color: rgba(255,255,255,0.75); max-width: 560px;
-    line-height: 1.75; margin-bottom: 40px;
-  }
+  .hero-subtitle { font-family: var(--serif); font-size: clamp(18px, 2.5vw, 26px); color: rgba(255,255,255,0.6); margin-bottom: 28px; font-style: italic; }
+  .hero-desc { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 560px; line-height: 1.75; margin-bottom: 40px; }
   .hero-cta {
     display: inline-flex; align-items: center; gap: 10px;
-    background: var(--teal); color: white;
-    padding: 14px 28px; border-radius: 6px;
-    text-decoration: none; font-weight: 600; font-size: 15px;
-    transition: background .2s, transform .2s;
+    background: var(--teal); color: white; padding: 14px 28px; border-radius: 6px;
+    text-decoration: none; font-weight: 600; font-size: 15px; transition: background .2s;
   }
-  .hero-cta:hover { background: var(--teal-light); transform: translateY(-1px); }
-  .hero-stats {
-    display: flex; gap: 48px; margin-top: 64px;
-    padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .stat-num {
-    font-family: var(--serif); font-size: 36px; font-weight: 900; color: var(--teal-light);
-    line-height: 1;
-  }
+  .hero-cta:hover { background: var(--teal-light); }
+  .hero-stats { display: flex; gap: 48px; margin-top: 64px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+  .stat-num { font-family: var(--serif); font-size: 36px; font-weight: 900; color: var(--teal-light); line-height: 1; }
   .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
 
-  /* SECTIONS */
   section { padding: 96px 40px; }
   .container { max-width: 1100px; margin: 0 auto; }
-  .section-tag {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 700;
-    color: var(--dark); margin-bottom: 48px; line-height: 1.2;
-  }
+  .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+  .section-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--dark); margin-bottom: 48px; line-height: 1.2; }
 
-  /* ABOUT */
   .about { background: var(--light); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
   .about-text p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 20px; }
   .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-  .badge {
-    background: var(--white); border: 1.5px solid var(--teal-pale);
-    color: var(--teal); font-size: 13px; font-weight: 500;
-    padding: 6px 14px; border-radius: 4px;
-  }
-  .credential-card {
-    background: var(--white); border-radius: 12px; padding: 28px;
-    border: 1px solid #E5EAEA; margin-bottom: 16px;
-  }
+  .badge { background: var(--white); border: 1.5px solid var(--teal-pale); color: var(--teal); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 4px; }
+  .credential-card { background: var(--white); border-radius: 12px; padding: 24px; border: 1px solid #E5EAEA; margin-bottom: 14px; }
   .credential-card h4 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
   .credential-card p { font-size: 13px; color: var(--gray); }
   .credential-card .year { font-size: 12px; color: var(--teal); font-weight: 600; margin-top: 6px; }
 
   /* RESULTS */
-  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .result-card {
-    background: var(--white); border: 1px solid #E5EAEA;
-    border-radius: 12px; padding: 32px;
-    transition: box-shadow .2s, transform .2s;
-  }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+  .result-card { background: var(--white); border: 1px solid #E5EAEA; border-radius: 12px; padding: 28px; transition: box-shadow .2s, transform .2s; }
   .result-card:hover { box-shadow: 0 8px 32px rgba(13,115,119,0.12); transform: translateY(-2px); }
   .result-brand { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
   .result-num { font-family: var(--serif); font-size: 42px; font-weight: 900; color: var(--dark); line-height: 1; }
   .result-unit { font-size: 14px; color: var(--gray); margin-top: 4px; }
   .result-desc { font-size: 14px; color: var(--mid); margin-top: 16px; line-height: 1.6; }
-  .result-tag {
-    display: inline-block; margin-top: 16px;
-    background: var(--teal-pale); color: var(--teal);
-    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px;
-  }
+  .result-tag { display: inline-block; margin-top: 16px; background: var(--teal-pale); color: var(--teal); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; }
 
-  /* WRITING SAMPLES */
-  .writing { background: var(--light); }
+  /* SCREENSHOTS */
+  .screenshots-section { background: var(--light); }
+  .screenshots-intro { font-size: 15px; color: var(--mid); margin-bottom: 36px; line-height: 1.7; max-width: 700px; }
+  .screenshots-group { margin-bottom: 56px; }
+  .screenshots-group-title { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .screenshots-group-desc { font-size: 14px; color: var(--gray); margin-bottom: 20px; }
+  .screenshots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .screenshots-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .screenshot-item { border-radius: 10px; overflow: hidden; border: 1px solid #E5EAEA; background: var(--white); transition: box-shadow .2s; }
+  .screenshot-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+  .screenshot-item img { width: 100%; height: auto; display: block; }
+  .screenshot-caption { padding: 10px 14px; font-size: 12px; color: var(--gray); border-top: 1px solid #F0F0F0; }
+
+  /* WRITING */
+  .writing { background: var(--white); }
   .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .article-card {
-    background: var(--white); border-radius: 10px;
-    border: 1px solid #E5EAEA; padding: 24px;
-    transition: box-shadow .2s;
-  }
+  .article-card { background: var(--light); border-radius: 10px; border: 1px solid #E5EAEA; padding: 24px; transition: box-shadow .2s; }
   .article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-  .article-niche {
-    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--teal); margin-bottom: 10px;
-  }
+  .article-niche { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); margin-bottom: 10px; }
   .article-title { font-size: 15px; font-weight: 600; color: var(--dark); line-height: 1.4; margin-bottom: 10px; }
   .article-meta { font-size: 12px; color: var(--gray); }
-  .article-link {
-    display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
-    font-size: 13px; color: var(--teal); text-decoration: none; font-weight: 500;
-  }
+  .article-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 13px; color: var(--teal); text-decoration: none; font-weight: 500; }
   .article-link:hover { text-decoration: underline; }
-  .proof-badge {
-    display: inline-block; margin-top: 10px;
-    background: #EEF9EE; color: #1A7A1A;
-    font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px;
-  }
+  .proof-badge { display: inline-block; margin-top: 10px; background: #EEF9EE; color: #1A7A1A; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
 
   /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .skill-block {
-    background: var(--white); border: 1px solid #E5EAEA;
-    border-radius: 10px; padding: 24px;
-  }
+  .skill-block { background: var(--white); border: 1px solid #E5EAEA; border-radius: 10px; padding: 24px; }
   .skill-icon { font-size: 28px; margin-bottom: 12px; }
   .skill-block h4 { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 10px; }
   .skill-list { list-style: none; }
   .skill-list li { font-size: 13px; color: var(--gray); padding: 3px 0; }
   .skill-list li::before { content: "▸ "; color: var(--teal); font-size: 10px; }
 
-  /* EXPERIENCE */
+  /* TIMELINE */
   .timeline { position: relative; padding-left: 28px; }
   .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--teal-pale); }
   .timeline-item { position: relative; margin-bottom: 48px; }
-  .timeline-dot {
-    position: absolute; left: -34px; top: 6px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--teal); border: 3px solid var(--white);
-    box-shadow: 0 0 0 2px var(--teal);
-  }
+  .timeline-dot { position: absolute; left: -34px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--teal); }
   .timeline-period { font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
   .timeline-role { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
   .timeline-company { font-size: 14px; color: var(--gray); margin-bottom: 14px; }
@@ -210,59 +134,38 @@
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
   .contact-intro { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.8; }
   .contact-links { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
-  .contact-link {
-    display: flex; align-items: center; gap: 14px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px; padding: 16px 20px; text-decoration: none;
-    color: rgba(255,255,255,0.85); font-size: 14px;
-    transition: background .2s, border-color .2s;
-  }
+  .contact-link { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 20px; text-decoration: none; color: rgba(255,255,255,0.85); font-size: 14px; transition: background .2s; }
   .contact-link:hover { background: rgba(13,115,119,0.2); border-color: var(--teal); }
   .contact-link-icon { font-size: 20px; }
-  .contact-highlight {
-    background: rgba(13,115,119,0.15); border: 1px solid rgba(13,115,119,0.3);
-    border-radius: 12px; padding: 32px;
-  }
+  .contact-highlight { background: rgba(13,115,119,0.15); border: 1px solid rgba(13,115,119,0.3); border-radius: 12px; padding: 32px; }
   .contact-highlight h3 { font-family: var(--serif); font-size: 22px; color: var(--white); margin-bottom: 16px; }
   .contact-highlight p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 20px; }
-  .contact-highlight .cta-btn {
-    display: inline-block; background: var(--teal); color: white;
-    padding: 12px 24px; border-radius: 6px; text-decoration: none;
-    font-size: 14px; font-weight: 600;
-  }
+  .cta-btn { display: inline-block; background: var(--teal); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; }
 
-  /* FOOTER */
-  footer {
-    background: #080E14; padding: 24px 40px;
-    text-align: center; font-size: 13px; color: rgba(255,255,255,0.3);
-  }
+  footer { background: #080E14; padding: 24px 40px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.3); }
 
   @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    section { padding: 64px 20px; }
-    .hero { padding: 100px 20px 60px; }
-    .hero-stats { flex-wrap: wrap; gap: 28px; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-    .results-grid, .articles-grid, .skills-grid { grid-template-columns: 1fr; }
+    nav { padding: 14px 20px; } .nav-links { display: none; }
+    section { padding: 64px 20px; } .hero { padding: 100px 20px 60px; }
+    .about-grid, .contact-grid, .results-grid, .articles-grid, .skills-grid { grid-template-columns: 1fr; }
+    .screenshots-grid, .screenshots-grid.three { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-name">Dr. Reshile Abdullah</div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#results">Results</a>
+    <a href="#screenshots">Evidence</a>
     <a href="#writing">Writing</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-tag">Content Strategist · Medical Writer · Digital Marketer</div>
@@ -271,27 +174,14 @@
     <p class="hero-desc">Doctor of Pharmacy turned content strategist with 8+ years of experience driving measurable growth for global healthcare, SaaS, and digital brands. I don't just write — I build strategies that rank, convert, and last.</p>
     <a href="#results" class="hero-cta">See My Results ↓</a>
     <div class="hero-stats">
-      <div>
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Published Articles</div>
-      </div>
-      <div>
-        <div class="stat-num">76K+</div>
-        <div class="stat-label">Sessions Generated</div>
-      </div>
-      <div>
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div>
-        <div class="stat-num">6</div>
-        <div class="stat-label">Brands Managed</div>
-      </div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Published Articles</div></div>
+      <div><div class="stat-num">76K+</div><div class="stat-label">Sessions Generated</div></div>
+      <div><div class="stat-num">699K</div><div class="stat-label">Google Impressions</div></div>
+      <div><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
     <div class="about-grid">
@@ -307,33 +197,16 @@
           <span class="badge">Relocating to KSA 2026</span>
         </div>
       </div>
-      <div class="about-credentials">
-        <div class="credential-card">
-          <h4>Doctor of Pharmacy (R.Ph)</h4>
-          <p>Abbottabad University of Science and Technology</p>
-          <div class="year">2017 – 2022</div>
-        </div>
-        <div class="credential-card">
-          <h4>Clinical Pharmacist</h4>
-          <p>Shifa International Hospital, Islamabad</p>
-          <div class="year">2022 – 2023</div>
-        </div>
-        <div class="credential-card">
-          <h4>Diploma in Marketing Management</h4>
-          <p>Virtual University of Pakistan</p>
-          <div class="year">2025 – 2026</div>
-        </div>
-        <div class="credential-card">
-          <h4>Pharmaceutical Advisory Board Meetings</h4>
-          <p>Major Pharma Client (Confidential — NDA)</p>
-          <div class="year">2026</div>
-        </div>
+      <div>
+        <div class="credential-card"><h4>Doctor of Pharmacy (R.Ph)</h4><p>Abbottabad University of Science and Technology</p><div class="year">2017 – 2022</div></div>
+        <div class="credential-card"><h4>Clinical Pharmacy Internship (Housejob)</h4><p>Shifa International Hospital, Islamabad</p><div class="year">2022 – 2023 · 6 Months</div></div>
+        <div class="credential-card"><h4>Diploma in Marketing Management</h4><p>Virtual University of Pakistan</p><div class="year">2025 – 2026</div></div>
+        <div class="credential-card"><h4>Pharmaceutical ABM Consultant</h4><p>Major Pharma Client (Confidential — NDA)</p><div class="year">2026</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESULTS -->
 <section id="results">
   <div class="container">
     <div class="section-tag">Proven Impact</div>
@@ -343,49 +216,107 @@
         <div class="result-brand">Website Voice — Devandgo</div>
         <div class="result-num">76K+</div>
         <div class="result-unit">Total sessions in 6 months</div>
-        <div class="result-desc">Drove 35,022 organic search sessions alongside 76,622 total sessions between June–November 2024 through SEO content strategy and targeted blog production.</div>
+        <div class="result-desc">Drove 35,022 organic search sessions alongside 76,622 total sessions between June–November 2024 through SEO content strategy.</div>
         <span class="result-tag">GA4 Verified</span>
+      </div>
+      <div class="result-card">
+        <div class="result-brand">Website Voice — Google Search</div>
+        <div class="result-num">699K</div>
+        <div class="result-unit">Google impressions generated</div>
+        <div class="result-desc">Generated 699,176 organic Google impressions with top pages achieving 1,349 clicks and 145K impressions individually.</div>
+        <span class="result-tag">Search Console Verified</span>
       </div>
       <div class="result-card">
         <div class="result-brand">Subtitles Bee — Devandgo</div>
         <div class="result-num">5.7K</div>
         <div class="result-unit">Monthly organic traffic</div>
-        <div class="result-desc">Grew Subtitles Bee to 5,700 monthly organic visitors across 92 ranking pages with 3,500+ keywords — DR 38, 4.3K backlinks, 489 referring domains.</div>
+        <div class="result-desc">Grew to 5,700 monthly organic visitors across 92 ranking pages, 3,500+ keywords, DR 38, 4.3K backlinks.</div>
         <span class="result-tag">Ahrefs Verified</span>
+      </div>
+      <div class="result-card">
+        <div class="result-brand">Subtitles Bee — Q4 KPIs</div>
+        <div class="result-num">98.3%</div>
+        <div class="result-unit">Organic signup conversion achieved</div>
+        <div class="result-desc">Hit 98.3% of Q4 organic signup conversion target. Domain Authority grew from 32 to 36. Organic users target: 28,000.</div>
+        <span class="result-tag">KPI Dashboard — Named "Reshile"</span>
       </div>
       <div class="result-card">
         <div class="result-brand">Your Doctors Online</div>
         <div class="result-num">500+</div>
         <div class="result-unit">Published medical articles</div>
-        <div class="result-desc">Authored 500+ medically reviewed health articles — majority achieving Google first-page rankings. Author profile archived at yourdoctors.online/author/reshile/</div>
+        <div class="result-desc">Authored 500+ medically reviewed health articles — majority achieving Google first-page rankings. Still live today.</div>
         <span class="result-tag">Wayback Machine Archived</span>
-      </div>
-      <div class="result-card">
-        <div class="result-brand">Website Voice — Traffic Growth</div>
-        <div class="result-num">699K</div>
-        <div class="result-unit">Google impressions generated</div>
-        <div class="result-desc">Generated 699,176 organic Google impressions for Website Voice with top blog pages achieving 1,349+ clicks and 64,622 impressions individually.</div>
-        <span class="result-tag">Google Search Console</span>
-      </div>
-      <div class="result-card">
-        <div class="result-brand">Subtitles Bee — Q4 KPIs</div>
-        <div class="result-num">98.3%</div>
-        <div class="result-unit">Organic signup conversion rate</div>
-        <div class="result-desc">Achieved 98.3% of Q4 signup conversion target from organic search, with Domain Authority growing from 32 to 36 and organic users hitting 28,000 target.</div>
-        <span class="result-tag">Q4 KPI Dashboard</span>
       </div>
       <div class="result-card">
         <div class="result-brand">Zealium Media</div>
         <div class="result-num">6</div>
         <div class="result-unit">Brand websites managed as sole POC</div>
-        <div class="result-desc">Currently managing all digital marketing efforts across 6 brand properties — content strategy, SEO, social media, paid campaigns, and performance reporting.</div>
-        <span class="result-tag">Current Role</span>
+        <div class="result-desc">Currently managing all digital marketing across 6 brand properties — content, SEO, social, paid campaigns & reporting.</div>
+        <span class="result-tag">Current Role — 2025–Present</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WRITING SAMPLES -->
+<section class="screenshots-section" id="screenshots">
+  <div class="container">
+    <div class="section-tag">Visual Evidence</div>
+    <h2 class="section-title">Real data. Real results. Verified.</h2>
+    <p class="screenshots-intro">Every number in this portfolio is backed by real analytics screenshots from GA4, Google Search Console, and Ahrefs. These are not estimates — they are verified data from live campaigns I personally managed.</p>
+
+    <div class="screenshots-group">
+      <div class="screenshots-group-title">Website Voice — Traffic & Performance</div>
+      <div class="screenshots-group-desc">GA4 and Ahrefs data showing organic growth, session acquisition, and keyword performance for Website Voice (Devandgo)</div>
+      <div class="screenshots-grid">
+        <div class="screenshot-item"><img src="https://i.ibb.co/SwC9FH5s/WV-2.png" alt="Website Voice GA4 Traffic" loading="lazy"><div class="screenshot-caption">GA4 — Sessions by channel group (Jun–Nov 2024)</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/MDrCZ2tT/WV-3.png" alt="Website Voice Traffic Data" loading="lazy"><div class="screenshot-caption">GA4 — Total sessions: 76,622 | Organic: 35,022</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/gM7S6Xqt/WV-4.png" alt="Website Voice Events" loading="lazy"><div class="screenshot-caption">GA4 — Event count & key events by channel</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/ZpyqV715/WV-5.png" alt="Website Voice Organic Search" loading="lazy"><div class="screenshot-caption">GA4 — New users by channel: Organic Search leading</div></div>
+      </div>
+    </div>
+
+    <div class="screenshots-group">
+      <div class="screenshots-group-title">Website Voice — Google Search Console & Ahrefs</div>
+      <div class="screenshots-group-desc">699K impressions, top-performing blog pages, and 6-month Ahrefs growth trajectory</div>
+      <div class="screenshots-grid">
+        <div class="screenshot-item"><img src="https://i.ibb.co/5gCcSN8M/Capture.png" alt="Website Voice Search Console" loading="lazy"><div class="screenshot-caption">Google Search Console — 699,176 impressions | 6,769 clicks</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/Vpxn1GH9/My-blog-that-went-well-WV.png" alt="Website Voice Best Blog" loading="lazy"><div class="screenshot-caption">Top performing blog — 91 traffic | $28 value | +49 growth</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/gLDgx99C/WV-ahrefs-6-months.png" alt="Website Voice Ahrefs 6 months" loading="lazy"><div class="screenshot-caption">Ahrefs — 6 month organic traffic growth trajectory</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/Y4mqQT8B/WV-branded-non-branded.png" alt="Website Voice Branded Traffic" loading="lazy"><div class="screenshot-caption">Branded vs non-branded organic traffic growth (Jul–Dec)</div></div>
+      </div>
+    </div>
+
+    <div class="screenshots-group">
+      <div class="screenshots-group-title">Website Voice — Monthly Traffic Over Time</div>
+      <div class="screenshots-group-desc">Consistent upward trend in organic traffic and impressions across the campaign period</div>
+      <div class="screenshots-grid" style="grid-template-columns: 1fr;">
+        <div class="screenshot-item"><img src="https://i.ibb.co/vCPvYKPM/WV-traffic-over-months.png" alt="Website Voice Traffic Over Months" loading="lazy"><div class="screenshot-caption">GA4 — Daily sessions over time (Jul–Nov 2024) showing consistent organic growth</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/Fk9KDZb5/WV-traffic-growth.png" alt="Website Voice Traffic Growth" loading="lazy"><div class="screenshot-caption">Ahrefs — Organic traffic growth over 1 year period</div></div>
+      </div>
+    </div>
+
+    <div class="screenshots-group">
+      <div class="screenshots-group-title">Subtitles Bee — Growth & KPI Performance</div>
+      <div class="screenshots-group-desc">Ahrefs domain overview, Q4 KPI tracker (named "Reshile"), keyword wins, and progress milestones</div>
+      <div class="screenshots-grid">
+        <div class="screenshot-item"><img src="https://i.ibb.co/qMcMF45p/SB-in-3-months-ahrefs.png" alt="Subtitles Bee Ahrefs 3 months" loading="lazy"><div class="screenshot-caption">Ahrefs — SB domain: DR 38, 5.7K traffic, 3.5K keywords, 4.3K backlinks</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/2YWfBQY4/SB-progress-1.png" alt="Subtitles Bee Progress" loading="lazy"><div class="screenshot-caption">Ahrefs — Subtitles Bee organic keyword growth by intent</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/gKn04td/My-progress-for-SB-till-october.png" alt="SB Q4 KPIs" loading="lazy"><div class="screenshot-caption">Q4 KPI Dashboard — "Q4 SB content KPIs – Reshile" | 98.3% conversion achieved</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/69Gfvvr/Branded-SB.png" alt="Subtitles Bee Branded Traffic" loading="lazy"><div class="screenshot-caption">Subtitles Bee branded organic traffic growth (Jul–Dec)</div></div>
+      </div>
+    </div>
+
+    <div class="screenshots-group">
+      <div class="screenshots-group-title">Subtitles Bee — Page Rankings & Keyword Wins</div>
+      <div class="screenshots-group-desc">92 ranking pages, top keyword positions, and fast-moving keyword gains</div>
+      <div class="screenshots-grid">
+        <div class="screenshot-item"><img src="https://i.ibb.co/TxJv4SNf/All-blogs-urls-and-their-good-positions.png" alt="SB All Blog URLs" loading="lazy"><div class="screenshot-caption">Ahrefs — 92 pages ranking | 5.7K total traffic | Top keyword: "auto caption" pos. 6</div></div>
+        <div class="screenshot-item"><img src="https://i.ibb.co/Xr7Qfwq9/Keywords-that-got-traffic-in-less-time.png" alt="Keywords Fast Traffic" loading="lazy"><div class="screenshot-caption">Ahrefs — Top keyword wins by traffic change | "instagram audio download" +79</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="writing" id="writing">
   <div class="container">
     <div class="section-tag">Published Work</div>
@@ -400,36 +331,36 @@
       </div>
       <div class="article-card">
         <div class="article-niche">Healthcare · Gastroenterology</div>
-        <div class="article-title">Why Does My Poop Look Like Coffee Grounds? Treatment Options</div>
+        <div class="article-title">Why Does My Poop Look Like Coffee Grounds?</div>
         <div class="article-meta">Your Doctors Online · July 2023</div>
         <span class="proof-badge">✓ Author verified via Wayback Machine</span>
         <a href="https://web.archive.org/web/2023/https://yourdoctors.online/coffee-ground-stool/" class="article-link" target="_blank">View archived article →</a>
       </div>
       <div class="article-card">
         <div class="article-niche">Healthcare · Gastroenterology</div>
-        <div class="article-title">White Specks In Your Poop: Causes, Treatment and Complications</div>
+        <div class="article-title">White Specks In Your Poop: Causes & Treatment</div>
         <div class="article-meta">Your Doctors Online · July 2023</div>
         <span class="proof-badge">✓ Author verified via Wayback Machine</span>
         <a href="https://web.archive.org/web/2023/https://yourdoctors.online/white-specks-in-poop/" class="article-link" target="_blank">View archived article →</a>
       </div>
       <div class="article-card">
         <div class="article-niche">SaaS · Content Marketing</div>
-        <div class="article-title">Vlog Audience Building: 12 Tips to Grow Your YouTube</div>
-        <div class="article-meta">Subtitles Bee · 2024 · 817 monthly visitors · Position #4</div>
+        <div class="article-title">Vlog Audience Building: 12 Tips to Grow YouTube</div>
+        <div class="article-meta">Subtitles Bee · 817 monthly visitors · Position #4</div>
         <span class="proof-badge">✓ Ranking #4 on Google</span>
         <a href="https://subtitlebee.com/blog/vlog-audience-building-12-tips-grow-youtube/" class="article-link" target="_blank">View live article →</a>
       </div>
       <div class="article-card">
-        <div class="article-niche">SaaS · SEO Content</div>
+        <div class="article-niche">SaaS · Text-to-Speech</div>
         <div class="article-title">Apps That Read to You: Top Text-to-Speech Tools</div>
-        <div class="article-meta">Website Voice · 2024 · 1,163 clicks · 145K impressions</div>
+        <div class="article-meta">Website Voice · 1,163 clicks · 145K impressions</div>
         <span class="proof-badge">✓ 145K Google Impressions</span>
         <a href="https://websitevoice.com/blog/apps-that-read-to-you/" class="article-link" target="_blank">View live article →</a>
       </div>
       <div class="article-card">
         <div class="article-niche">SaaS · Assistive Tech</div>
         <div class="article-title">Assistive Technology Tools: Complete Guide</div>
-        <div class="article-meta">Website Voice · 2024 · 1,349 clicks · 64K impressions</div>
+        <div class="article-meta">Website Voice · 1,349 clicks · 64K impressions</div>
         <span class="proof-badge">✓ Top performing page</span>
         <a href="https://websitevoice.com/blog/assistive-technology-tools/" class="article-link" target="_blank">View live article →</a>
       </div>
@@ -440,124 +371,33 @@
   </div>
 </section>
 
-<!-- SKILLS -->
-<section>
+<section style="background: var(--light);">
   <div class="container">
     <div class="section-tag">Capabilities</div>
     <h2 class="section-title">What I bring to every project</h2>
     <div class="skills-grid">
-      <div class="skill-block">
-        <div class="skill-icon">✍️</div>
-        <h4>Content & Writing</h4>
-        <ul class="skill-list">
-          <li>Medical & health writing</li>
-          <li>SEO content strategy</li>
-          <li>Copywriting & brand voice</li>
-          <li>Long-form articles</li>
-          <li>Email campaigns</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <div class="skill-icon">📈</div>
-        <h4>SEO & Growth</h4>
-        <ul class="skill-list">
-          <li>Keyword research</li>
-          <li>On-page optimization</li>
-          <li>Content audits</li>
-          <li>Topical authority building</li>
-          <li>Competitive analysis</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <div class="skill-icon">📊</div>
-        <h4>Analytics & Tools</h4>
-        <ul class="skill-list">
-          <li>GA4 & Search Console</li>
-          <li>Ahrefs & Grafana</li>
-          <li>Clarity & Coda</li>
-          <li>Jira & Trello</li>
-          <li>GitLab & Git Bash</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <div class="skill-icon">🎬</div>
-        <h4>Creative & Social</h4>
-        <ul class="skill-list">
-          <li>CapCut Pro & DaVinci</li>
-          <li>Canva & Adobe Suite</li>
-          <li>Social media strategy</li>
-          <li>Meta Ads management</li>
-          <li>Video content creation</li>
-        </ul>
-      </div>
+      <div class="skill-block"><div class="skill-icon">✍️</div><h4>Content & Writing</h4><ul class="skill-list"><li>Medical & health writing</li><li>SEO content strategy</li><li>Copywriting & brand voice</li><li>Long-form articles</li><li>Email campaigns</li></ul></div>
+      <div class="skill-block"><div class="skill-icon">📈</div><h4>SEO & Growth</h4><ul class="skill-list"><li>Keyword research</li><li>On-page optimization</li><li>Content audits</li><li>Topical authority building</li><li>Competitive analysis</li></ul></div>
+      <div class="skill-block"><div class="skill-icon">📊</div><h4>Analytics & Tools</h4><ul class="skill-list"><li>GA4 & Search Console</li><li>Ahrefs & Grafana</li><li>Clarity & Coda</li><li>Jira & Trello</li><li>GitLab & Git Bash</li></ul></div>
+      <div class="skill-block"><div class="skill-icon">🎬</div><h4>Creative & Social</h4><ul class="skill-list"><li>CapCut Pro & DaVinci</li><li>Canva & Adobe Suite</li><li>Social media strategy</li><li>Meta Ads management</li><li>Video content creation</li></ul></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section style="background: var(--light);" id="experience">
+<section style="background: var(--white);" id="experience">
   <div class="container">
     <div class="section-tag">Career Timeline</div>
     <h2 class="section-title">Experience that compounds</h2>
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2025 – Present</div>
-        <div class="timeline-role">Digital Marketing Specialist</div>
-        <div class="timeline-company">Zealium Media · Remote</div>
-        <ul class="timeline-points">
-          <li>Primary POC for all digital marketing across 6 brand websites</li>
-          <li>Content strategy, SEO, social media, paid campaigns & reporting</li>
-          <li>Video production using CapCut Pro and DaVinci Resolve</li>
-        </ul>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2024 – 2025</div>
-        <div class="timeline-role">Content Marketing Specialist</div>
-        <div class="timeline-company">Devandgo — Website Voice & Subtitles Bee · Remote</div>
-        <ul class="timeline-points">
-          <li>Sole marketing lead for two SaaS products simultaneously</li>
-          <li>76K+ sessions & 699K impressions for Website Voice</li>
-          <li>5.7K monthly organic traffic for Subtitles Bee, DR 38</li>
-        </ul>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2023 – 2024</div>
-        <div class="timeline-role">Content Marketer & SEO Writer</div>
-        <div class="timeline-company">Your Doctors Online · Islamabad</div>
-        <ul class="timeline-points">
-          <li>500+ medically reviewed health articles published</li>
-          <li>Majority achieving Google first-page rankings — still live</li>
-          <li>Full content calendar, SEO, and campaign management</li>
-        </ul>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2022 – 2023</div>
-        <div class="timeline-role">Clinical Pharmacist (Housejob)</div>
-        <div class="timeline-company">Shifa International Hospital · Islamabad</div>
-        <ul class="timeline-points">
-          <li>Clinical pharmacy in tertiary care — medication reviews & patient counselling</li>
-          <li>Cross-functional collaboration with physicians and clinical teams</li>
-        </ul>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2021 – 2023</div>
-        <div class="timeline-role">Freelance Content Strategist</div>
-        <div class="timeline-company">Upwork · Remote</div>
-        <ul class="timeline-points">
-          <li>Healthcare, SaaS, e-commerce & lifestyle content for US & global clients</li>
-          <li>SEO writing, copywriting, and campaign content management</li>
-        </ul>
-      </div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">2025 – Present</div><div class="timeline-role">Digital Marketing Specialist</div><div class="timeline-company">Zealium Media · Remote</div><ul class="timeline-points"><li>Primary POC for all digital marketing across 6 brand websites</li><li>Content strategy, SEO, social media, paid campaigns & reporting</li><li>Video production using CapCut Pro and DaVinci Resolve</li></ul></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">2024 – 2025</div><div class="timeline-role">Content Marketing Specialist</div><div class="timeline-company">Devandgo — Website Voice & Subtitles Bee · Remote</div><ul class="timeline-points"><li>Sole marketing lead for two SaaS products simultaneously</li><li>76K+ sessions & 699K impressions for Website Voice</li><li>5.7K monthly organic traffic for Subtitles Bee, DR 38</li></ul></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">2023 – 2024</div><div class="timeline-role">Content Marketer & SEO Writer</div><div class="timeline-company">Your Doctors Online · Islamabad</div><ul class="timeline-points"><li>500+ medically reviewed health articles published</li><li>Majority achieving Google first-page rankings — still live</li><li>Full content calendar, SEO, and campaign management</li></ul></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">2022 – 2023</div><div class="timeline-role">Clinical Pharmacy Intern (Housejob)</div><div class="timeline-company">Shifa International Hospital · Islamabad</div><ul class="timeline-points"><li>Completed a 6-month compulsory clinical pharmacy housejob as part of Pharm.D graduation requirements</li><li>Rotated through selected pharmacy and clinical areas gaining exposure to medication dispensing, patient counselling, and clinical team coordination</li><li>Supported pharmacists and clinical staff under supervision across assigned hospital sections</li></ul></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-period">2021 – 2023</div><div class="timeline-role">Freelance Content Strategist</div><div class="timeline-company">Upwork · Remote</div><ul class="timeline-points"><li>Healthcare, SaaS, e-commerce & lifestyle content for US & global clients</li><li>SEO writing, copywriting, and campaign content management</li></ul></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-tag" style="color: var(--teal-light);">Get In Touch</div>
@@ -566,22 +406,10 @@
       <div>
         <p class="contact-intro">I'm currently open to full-time roles, contract work, and freelance projects — especially in healthcare, SaaS, and wellness sectors. Relocating to Riyadh, Saudi Arabia in September 2026.</p>
         <div class="contact-links">
-          <a href="mailto:reshileabdullah@gmail.com" class="contact-link">
-            <span class="contact-link-icon">✉️</span>
-            reshileabdullah@gmail.com
-          </a>
-          <a href="tel:+923180235405" class="contact-link">
-            <span class="contact-link-icon">📞</span>
-            +92 318 023 5405
-          </a>
-          <a href="https://www.linkedin.com/in/drreshileabdullah/" class="contact-link" target="_blank">
-            <span class="contact-link-icon">🔗</span>
-            linkedin.com/in/drreshileabdullah/
-          </a>
-          <a href="https://yourdoctors.online/author/reshile/" class="contact-link" target="_blank">
-            <span class="contact-link-icon">📝</span>
-            YDO Author Profile — 500+ Articles
-          </a>
+          <a href="mailto:reshileabdullah@gmail.com" class="contact-link"><span class="contact-link-icon">✉️</span>reshileabdullah@gmail.com</a>
+          <a href="tel:+923180235405" class="contact-link"><span class="contact-link-icon">📞</span>+92 318 023 5405</a>
+          <a href="https://www.linkedin.com/in/drreshileabdullah/" class="contact-link" target="_blank"><span class="contact-link-icon">🔗</span>linkedin.com/in/drreshileabdullah/</a>
+          <a href="https://yourdoctors.online/author/reshile/" class="contact-link" target="_blank"><span class="contact-link-icon">📝</span>YDO Author Profile — 500+ Articles</a>
         </div>
       </div>
       <div class="contact-highlight">
@@ -593,9 +421,7 @@
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Dr. Reshile Abdullah · Content Strategist & Digital Marketing Specialist · Islamabad, Pakistan</p>
-</footer>
+<footer><p>© 2026 Dr. Reshile Abdullah · Content Strategist & Digital Marketing Specialist · Islamabad, Pakistan</p></footer>
 
 </body>
 </html>
